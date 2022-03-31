@@ -20,4 +20,27 @@ import javax.persistence.Entity;
 public class Employee extends BaseEntity{
     private String name;
     private float salary;
+
+    public static Builder builder(){
+        return new Builder();
+    }
+    public static class Builder{
+
+        private String name;
+        private float salary;
+
+        public Builder setName(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public Builder setSalary(float salary) {
+            this.salary = salary;
+            return this;
+        }
+
+        public Employee build(){
+            return new Employee(name,salary);
+        }
+    }
 }
