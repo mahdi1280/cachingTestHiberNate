@@ -5,16 +5,14 @@ import ir.maktab.service.EmployeeService;
 
 public class Main {
     public static void main(String[] args) {
-
         EmployeeService employeeService=new EmployeeService();
-
-//        Employee employee=createEmployee();
-//        employeeService.save(employee);
-
+        Employee employee=createEmployee();
+        employeeService.save(employee);
         Employee testEmployee=employeeService.findById(1);
         System.out.println(testEmployee.getName());
         testEmployee=employeeService.findById(1);
         System.out.println(testEmployee.getName());
+        //todo just one query select and 2 result
     }
 
     private static Employee createEmployee() {
